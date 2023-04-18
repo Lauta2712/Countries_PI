@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+body{
+    background-color: #94ABBD;
+} 
+
+.homeContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.homeContainer h1{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 44%;
+    margin-right: 30%;
+    color: #32425B;
+}

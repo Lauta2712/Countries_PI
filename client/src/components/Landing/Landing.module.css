@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.landingContainer{
+    background-image: linear-gradient(to bottom, #32425B, #94ABBD);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: none;
+    max-width: 60%;
+    margin-top: 1rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.landingContainer h1{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
+    margin-left: 34%;
+    margin-right: 15%;
+    color: antiquewhite;
+}
+
+.landingContainer p{
+    font-family: 'Cinzel', serif;
+    text-align: justify;
+    font-size: 20px;
+    color: antiquewhite;
+}
+
+.Link{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    color: #32425B;
+    font-size: 23px;
+}
+
+/* .link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+} */

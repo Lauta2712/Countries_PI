@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #5D6E8A;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+
+.cardContainer:hover{
+    transform: scale(1.05);
+}
+
+.cardContainer h2 {
+    font-family: 'Cinzel', serif;
+    text-decoration: none;
+}

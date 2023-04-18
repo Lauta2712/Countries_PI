@@ -4,13 +4,13 @@ const { Country } = require('../db');
 const countryShape = (data) => {
     return {
         id : data.cca3,
-        name : data.name.common,
-        flag : data.flag,
-        region : data.region,
-        capital : data.capital,
-        subregion : data.subregion,
-        area : data.area,
-        population : data.population
+        name : data.name.common || 'No name',
+        flags : data.flags[1] || 'No flag',
+        region : data.region || 'No continent',
+        capital : data.capital?.[0] || 'No capital',
+        subregion : data.subregion || 'No subregion',
+        area : data.area || 0,
+        population : data.population || 0
     }
 };
 

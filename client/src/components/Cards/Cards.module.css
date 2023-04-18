@@ -1,0 +1,17 @@
+.cardsContainer{
+    max-width: 84%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    margin-top: 0.8rem;
+    margin-left: 4%;
+    margin-right: 8%;
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .cardsContainer {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+}
