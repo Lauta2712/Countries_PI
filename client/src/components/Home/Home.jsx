@@ -2,7 +2,7 @@ import {  useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCountries } from '../../Redux/actions';
 import styles from './Home.module.css';
-import Navbar from '../Navbar/Navbar'
+import SearchBar from '../searchBar/SearchBar'
 import Cards from '../Cards/Cards'
 
 
@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div className={styles.homeContainer}>
             <h1>HOME</h1>
-            <Navbar />
+            {/* <SearchBar /> */}
             <Cards allCountries={allCountries} />
         </div>
     )

@@ -4,7 +4,7 @@ import Home from './components/Home/Home.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import Create from './components/Create/Create.jsx'
 import Landing from './components/Landing/Landing.jsx'
-import Navbar from "./components/Navbar/Navbar.jsx";
+import SearchBar from "./components/searchBar/SearchBar.jsx";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getCountries } from './Redux/actions.js';
@@ -22,7 +22,7 @@ function App() {
   return (
   <>
     <div>
-      {pathname === '/home' && <Navbar />}
+      {pathname === '/home' && <SearchBar />}
     </div> 
 
     <Routes>

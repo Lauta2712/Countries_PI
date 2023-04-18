@@ -33,19 +33,37 @@
     color: antiquewhite;
 }
 
-.Link{
-    font-family: 'Cinzel', serif;
-    display: flex;
-    justify-content: center;
-    color: #32425B;
-    font-size: 23px;
+.imagen{
+    margin-top: 1rem;
+    max-width: 70%;
+    max-height: 50%;
+    padding-left: 8%;
 }
 
-/* .link{
+.button{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    background-color: #94ABBD;
+    color: #32425B;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0.5rem;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.link{
+    font-family: 'Cinzel', serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 70%;
-    margin-left: 15%;
+    margin-left: 40%;
     margin-right: 15%;
-} */
+    font-size: 23px;
+    color: #32425B;
+} 
