@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+
+.searchBar{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.searchBar form{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.searchBar button{
+    font-family: 'Cinzel', serif;
+    background-color: #32425B;
+    padding: 10px 25px;
+    color: white;
+    width: fit-content;
+    margin-left: 1rem;
+    border: 1px solid #32425B;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.searchBar button:hover{
+    background-color: #184C78;
+    box-shadow: 0 0 10px #184C78, 0 0 40px #184C78, 0 0 80px #184C78;
+
+}

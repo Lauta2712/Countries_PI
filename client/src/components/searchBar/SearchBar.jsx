@@ -1,29 +1,49 @@
-// import React from "react";
-// import styles from "./SearchBar.module.css";
-// import { useDispatch } from "react-redux";
-// import { useState } from "react";
-// import { getByName } from "../../Redux/actions";
+import React, { useState } from "react";
+import styles from "./SearchBar.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getByName } from "../../Redux/actions";
 
-// export default function SearchBar() {
-//     const dispatch = useDispatch();
-//     const [name, setName] = useState('')
+export default function SearchBar() {
+    const dispatch = useDispatch()
+    const [searchString, setSearchString] = useState('');
+    const allCountries = useSelector((state)=> state.allCountries);
 
-//     const handleChange = (event) => {
-//         setName(event.target.value);
-//     };
+    const handleChange = (event) => {
+        event.preventDefault();
+        setSearchString(event.target.value);
+    };
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const filteredCountries = allCountries.filter(
+            (country) => country.name.toLowerCase() === searchString.toLowerCase()
+        );
+        if (filteredCountries.length > 0) {
+            dispatch(getByName(filteredCountries[0].name));
+        } else {
+            alert("Country not found");
+        }
+    };
     
     
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-//         dispatch(getByName(name))
-//     };
-    
-//     console.log(name);
-
-//     return (
-//         <div className={styles.searchBar}>
-//             <input type='search' onChange={ event =>handleChange(event)} value={name} placeholder="Search country"/>
-//             <button onClick={event => handleSubmit(event)}>Search</button>
-//         </div>
-//     );
-// }
+    return (
+        <div>
+            <div className={styles.searchBar}>
+                <form onSubmit={handleSubmit}>
+                    <input 
+                    type='search' 
+                    placeholder="Search country" 
+                    onChange={handleChange} 
+                    value={searchString}
+                    />
+                    <button type="submit" >Search</button>
+                </form>
+            </div>
+        </div>
+    );
+}
+// const handleSubmit = (event) => {
+//     event.preventDefault();
+//     const filteredCountries = allCountries.filter(country => country.name.toLowerCase() === searchString.toLowerCase());
+//     dispatch(getByName(filteredCountries));
+// };

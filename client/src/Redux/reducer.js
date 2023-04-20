@@ -5,8 +5,9 @@ import { GET_BY_ID } from './actions';
 let initialState = {
     allCountries: [],
     countriesDetail: [],
-    countriesCopy : []
+    allCountriesCopy: []
 };
+
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -14,12 +15,12 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 allCountries: action.payload,
-                countriesCopy: action.payload 
+                //allCountriesCopy: action.payload 
             }
         case GET_BY_NAME: 
             return {
                 ...state,
-                allCountries: action.payload
+                allCountries: action.payload //Cambié esto haciendo la SearchBar
             }
         case GET_BY_ID: 
             return {
