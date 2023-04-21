@@ -10,7 +10,7 @@ const Card = (country) => {
             <Link to={`/Home/${id}`}>
                 <h2>{name}</h2>
                 <img src={flags} alt='country'/>
-                <h3>{region}</h3>
+                <h3>Continent: {region}</h3>
             </Link>
         </div>
     </>

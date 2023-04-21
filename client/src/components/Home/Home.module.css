@@ -20,6 +20,36 @@ body{
     color: #32425B;
 }
 
-/* .homeContainer::-webkit-scrollbar {
-    display: none;
-} */
+.button{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    background-color: #621E7F;
+    color: #94ABBD;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0.5rem;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+.link{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
+    margin-left: 40%;
+    margin-right: 15%;
+    font-size: 23px;
+    color: #32425B;
+} 
+
+a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: white; /* Cambiar color a rojo */
+}

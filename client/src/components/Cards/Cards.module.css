@@ -6,10 +6,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 4rem;
-    margin-top: 0.8rem;
+    margin-top: 2rem;
     margin-left: 4%;
     margin-right: 8%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .notResult h4{

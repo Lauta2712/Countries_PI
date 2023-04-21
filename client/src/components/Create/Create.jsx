@@ -1,9 +1,20 @@
-import './Create.module.css';
+import styles from './Create.module.css';
+import React from 'react';
+import Form from "../Form/Form";
+import {Link} from "react-router-dom";
+
 
 const Create = () => {
     return (
         <div>
-            <h1>Estas en el Create</h1>
+            
+            <Form />
+            
+            <div className={styles.link}>
+            <Link to="/Home">
+                <button className={styles.button}>Go Home!</button>
+            </Link>
+            </div>
         </div>
     )
 }

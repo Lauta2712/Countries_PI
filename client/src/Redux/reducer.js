@@ -1,11 +1,13 @@
 import {GET_COUNTRIES} from './actions';
 import { GET_BY_NAME } from './actions';
 import { GET_BY_ID } from './actions';
+import { CREATE_ACTIVITY } from './actions';
 
 let initialState = {
     allCountries: [],
     countriesDetail: [],
-    allCountriesCopy: []
+    allCountriesCopy: [],
+    allActivities: []
 };
 
 
@@ -26,6 +28,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 countriesDetail: action.payload
+            }
+        case CREATE_ACTIVITY:
+            return {
+                ...state,
+                countriesDetail: [...state.countriesDetail, action.payload]
             }
         default:
             return state;

@@ -12,16 +12,16 @@ const Detail = () => {
     const dispatch = useDispatch();
     const countries = useSelector( (state) => state.countriesDetail);
 
+    
     useEffect ( () => {
         dispatch(getById(id))
     }, [dispatch, id] )
-
+    
     return (
         <div className={styles.detailContainer}>
-            {
-                countries.map( (country) => (
+            {countries && countries.map( (country) => (
                     
-                    <div >
+                    <div key={country.id}>
                         <h3>ID: {country.id}</h3>
                         <h2>{country.name}</h2>
                         <img src={country.flags} alt="country" className={styles.detailImage}/>
@@ -30,6 +30,14 @@ const Detail = () => {
                         <p>Subregion: {country.subregion}</p>
                         <p>Area: {country.area}</p>
                         <p> Population: {country.population} people</p>
+                        {
+                            country.Activities && country.Activities.map( (activity) => (
+                                <div key={activity.id}>
+                                    <h4>Activity Name: "{activity.name}"</h4>
+                                    <h4>Season: {activity.season}</h4>
+                                </div>
+                            ) )
+                        }
                     </div>
                 ))
             }
@@ -38,3 +46,5 @@ const Detail = () => {
 }
 
 export default Detail;
+{/* <p>Activities: {country.Activities.name}</p>
+<p>Activity Season: {country.Activities.season}</p> */}

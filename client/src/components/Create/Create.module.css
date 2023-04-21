@@ -1,0 +1,29 @@
+.button{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    margin-right: 25%;
+    margin-left: 12%;
+    background-color: #32425B;
+    color: #94ABBD;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0.5rem;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.link{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
+    margin-left: 40%;
+    margin-right: 15%;
+    font-size: 23px;
+    color: #32425B;
+} 
