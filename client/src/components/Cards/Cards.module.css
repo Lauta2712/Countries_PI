@@ -15,38 +15,38 @@
 .notResult h4{
     font-family: 'Cinzel', serif;
     max-width: 50%;
-    margin-left: 35%;
-    margin-right: 25%;
-    margin-top: 3rem;
     font-size: 25px;
     color: #32425B;
 }
 
-/* .containerButtons button{
+.button{
+    font-family: 'Cinzel', serif;
     display: flex;
-    flex-direction: row;
-    font-family: 'Cinzel', serif;
-    background-color: #32425B;
-    padding: 10px 25px;
-    color: white;
-    max-width: fit-content;
-    margin-left: 25%;
-    margin-right: 25%;
-    border: 1px solid #32425B;
-    border-radius: 10px;
-    letter-spacing: 2px;
-    font-size: 18px;
-    overflow: hidden;
-    transition: 0.2s;
-    cursor: pointer;
-} */
-
-/* .cardsContainer h1{
-    font-family: 'Cinzel', serif;
+    flex-direction: column;
+    justify-content: center;
     max-width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-} */
+    margin-left: 3%;
+    background-color: #32425B;
+    color: #94ABBD;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 0.5rem;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.link{
+    font-family: 'Cinzel', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
+    margin-left: 40%;
+    margin-right: 15%;
+    font-size: 23px;
+    color: #32425B;
+} 
 
 @media screen and (max-width: 768px) {
     .cardsContainer {

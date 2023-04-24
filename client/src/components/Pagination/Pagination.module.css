@@ -39,5 +39,16 @@
     text-decoration: none;
 }
 
-
+.span{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 50%;
+    margin-left: 23%;
+    margin-top: 1rem;
+    font-family: 'Cinzel', serif;
+    color: #32425B;
+    font-size: 18px;
+    font-weight: bold;
+}
 

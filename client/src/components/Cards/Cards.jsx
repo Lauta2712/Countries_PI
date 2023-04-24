@@ -3,6 +3,7 @@ import styles from "./Cards.module.css";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
     const countries = useSelector((state) => {
@@ -24,7 +25,12 @@ const Cards = () => {
     if (paginatedCountries.length === 0) {
         return (
             <div className={styles.notResult}>
-                <h4>No se encontraron resultados.</h4>
+                <div className={styles.link}>
+                    <Link to="/Home">
+                        <h4>No country found</h4>
+                        <button className={styles.button}>Back to Home</button>
+                    </Link>
+                </div>
             </div>
         );
     }
