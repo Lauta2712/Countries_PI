@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import styles from "./Cards.module.css";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
+import { useSelector } from "react-redux";
 
-const Cards = ({ allCountries }) => {
+const Cards = () => {
+    const countries = useSelector((state) => {
+        return state.searchResults.length > 0 ? state.searchResults : state.allCountries;
+    });
+    
+    const countriesList = Array.isArray(countries) ? countries : [countries];
     
     const [currentPage, setCurrentPage] = useState(1);
-
-    const countriesList = Array.isArray(allCountries) ? allCountries : [allCountries];
 
     const paginatedCountries = countriesList.slice((currentPage - 1) * 10, currentPage * 10);
 
@@ -27,6 +31,7 @@ const Cards = ({ allCountries }) => {
 
     return (
         <div className={styles.container}>
+            
             <Pagination
                 currentPage={currentPage}
                 pages={pages}

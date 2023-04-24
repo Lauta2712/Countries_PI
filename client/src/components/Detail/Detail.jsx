@@ -32,7 +32,7 @@ const Detail = () => {
                         <p> Population: {country.population} people</p>
                         {
                             country.Activities && country.Activities.map( (activity) => (
-                                <div key={activity.id}>
+                                <div className={styles.activity} key={activity.id}>
                                     <h4>Activity Name: "{activity.name}"</h4>
                                     <h4>Season: {activity.season}</h4>
                                 </div>

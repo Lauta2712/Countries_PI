@@ -5,8 +5,11 @@ import { getByName } from "../../Redux/actions";
 
 export default function SearchBar() {
     const dispatch = useDispatch()
+    
     const [searchString, setSearchString] = useState('');
+    
     const allCountries = useSelector((state)=> state.allCountries);
+    
     const countries = Array.isArray(allCountries) ? allCountries : [allCountries]; //verifico que allCountries sea un array acá también
 
 
@@ -14,6 +17,8 @@ export default function SearchBar() {
         event.preventDefault();
         setSearchString(event.target.value);
     };
+    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const filteredCountries = countries.filter(
@@ -23,9 +28,10 @@ export default function SearchBar() {
                 dispatch(getByName(filteredCountries[0].name));
             } else {
                 alert("Country not found");
-            }
-        };
-        
+        }
+    };
+
+
         return (
         <div>
             <div className={styles.searchBar}>

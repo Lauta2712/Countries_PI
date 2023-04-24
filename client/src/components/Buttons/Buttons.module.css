@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.optionsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 60%;
+    margin-left: 20%;
+    margin-right: 25%;
+}
+
+.optionsContainer select{
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    margin: 0.1rem;
+    padding: 0.3rem;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    background-color: #32425B;
+    color: white;
+    cursor: pointer;
+}
+
+.optionsContainer button{
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    margin: 0.1rem;
+    padding: 0.2rem;
+    border: 1px solid #32425B;
+    border-radius: 5px;
+    background-color: #32425B;
+    color: white;
+    cursor: pointer;
+}
+
+.optionsContainer option{
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #32425B;
+    color: white;
+}
