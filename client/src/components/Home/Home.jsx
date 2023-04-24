@@ -16,6 +16,8 @@ const Home = () => {
         dispatch(getCountries())
     }, [dispatch])
     
+    console.log(allCountries);
+    
     return (
         <div className={styles.homeContainer}>
             <h1>HOME</h1>

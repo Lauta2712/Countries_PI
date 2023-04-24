@@ -8,6 +8,7 @@ export const SORT_BY_NAME = "SORT_BY_NAME";
 export const SORT_BY_POPULATION = "SORT_BY_POPULATION";
 export const FILTER_CONTINENT = "FILTER_CONTINENT";
 export const FILTER_ACTIVITY = "FILTER_ACTIVITY";
+export const GET_ACTIVITIES = "GET_ACTIVITIES";
 
 // https://restcountries.com/v3/all
 
@@ -48,6 +49,17 @@ export const createActivity = (activity) => {
         return dispatch({
             type : CREATE_ACTIVITY,
             payload : response.data
+        })
+    }
+}
+
+export const getActivities = () => {
+    return async function (dispatch) {
+        const response = await axios.get(`http://localhost:3001/activities`);
+        console.log(response);
+        return dispatch({
+            type : GET_ACTIVITIES,
+            payload: response.data
         })
     }
 }

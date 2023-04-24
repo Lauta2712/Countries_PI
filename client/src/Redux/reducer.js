@@ -1,7 +1,7 @@
 import {GET_COUNTRIES} from './actions';
 import { GET_BY_NAME } from './actions';
 import { GET_BY_ID } from './actions';
-import { CREATE_ACTIVITY } from './actions';
+import { CREATE_ACTIVITY, GET_ACTIVITIES } from './actions';
 import { FILTER_CONTINENT, FILTER_ACTIVITY, SORT_BY_NAME, SORT_BY_POPULATION } from './actions';
 
 let initialState = {
@@ -13,19 +13,17 @@ let initialState = {
 };
 
 
-
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_COUNTRIES:
             return {
                 ...state,
                 allCountries: action.payload,
-                //allCountriesCopy: action.payload 
             }
         case GET_BY_NAME: 
             return {
                 ...state,
-                allCountries: action.payload //Cambié esto haciendo la SearchBar
+                allCountries: action.payload 
             }
         case GET_BY_ID: 
             return {
@@ -38,6 +36,12 @@ const rootReducer = (state = initialState, action) => {
                 countriesDetail: [...state.countriesDetail, action.payload],
                 allActivities: action.payload
             }
+        case GET_ACTIVITIES: 
+            return {
+                ...state,
+                allActivities: action.payload,
+                allCountries: [...state.allCountries, action.payload]
+            }
             case FILTER_CONTINENT:
                 const filteredCountries = state.allCountries.filter(
                     (country) => country.region === action.payload
@@ -47,16 +51,14 @@ const rootReducer = (state = initialState, action) => {
                     searchResults: filteredCountries,
                 };
         
-            case FILTER_ACTIVITY:
-                const filteredByActivity = state.allCountries.filter((country) => {
-                return country.activities.some(
-                    (activity) => activity.name === action.payload
-                );
-                });
-                return {
-                    ...state,
-                    searchResults: filteredByActivity,
-                };
+                case FILTER_ACTIVITY:
+                    const filteredByActivity = state.allCountries.filter((country) =>
+                        country.Activities.some((activity) => activity.name === action.payload)
+                    );
+                    return {
+                        ...state,
+                        searchResults: filteredByActivity,
+                    };
         
             case SORT_BY_NAME:
                 const sortedByName = [...state.allCountries].sort((a, b) => {
@@ -89,3 +91,6 @@ const rootReducer = (state = initialState, action) => {
 }
 
 export default rootReducer;
+
+//* TERNARIO => algo ? () : ()
+

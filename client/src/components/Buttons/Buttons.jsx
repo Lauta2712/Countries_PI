@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Buttons.module.css";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { filterContinent, filterActivity, sortByName, sortByPopulation } from "../../Redux/actions";
+
+import { filterContinent, 
+        filterActivity, 
+        sortByName, 
+        sortByPopulation, 
+        getActivities } from "../../Redux/actions";
+
 import { Link } from "react-router-dom";
 
 const Buttons = () => {
@@ -29,6 +35,10 @@ const Buttons = () => {
         dispatch(sortByPopulation(order))
     };
 
+    useEffect(()=>{
+        dispatch(getActivities())
+    }, [dispatch])
+
     return(
         <div className={styles.optionsContainer}>
             <div >
@@ -49,15 +59,19 @@ const Buttons = () => {
             </div>
             
             <div>
-                <select onChange={handleActivity}>
-                    <option value="">Filter by Activity</option>
-                    {/* {activities.map((a) => (
-                    <option key={a.id} value={a.name}>
-                        {a.name}
-                    </option>
-                ))} */}
-                </select>
-            </div>
+    <select onChange={handleActivity}>
+        <option value="">Filter by Activity</option>
+        {activities.length > 0 ? (
+            activities && activities.map((a) => a.name && (
+                <option key={a.id} value={a.name}>
+                    {a.name}
+                </option>
+            ))
+        ) : (
+            <option value="">Loading...</option>
+        )}
+    </select>
+</div>
             
             <div>
                 <select onChange={handleName}>
