@@ -14,18 +14,11 @@
     flex-direction: column;
     align-items: center;
     max-width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
     background-color: #621E7F;
     border: 1px solid #32425B;
     border-radius: 5px;
     padding: 25px;
-    -moz-osx-font-smoothing: grayscale;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    transition: transform 0.25s ease-out;
 }
 
 .divContainer{
@@ -42,10 +35,7 @@
     display: flex;
     flex-direction: column;
     max-width: 50%;
-    margin-left: 34%;
-    margin-right: 25%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
     border: 1px solid white;
     border-radius: 10px;
     background-color: transparent;
@@ -57,9 +47,11 @@
 
 span{
     color: #980900;
+    font-weight: bold;
 }
 
 input{
     font-family: 'Cinzel', serif;
     font-weight: bold;
+    max-width: 100%;
 }

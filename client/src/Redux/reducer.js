@@ -33,6 +33,7 @@ const rootReducer = (state = initialState, action) => {
         case CREATE_ACTIVITY:
             return {
                 ...state,
+                allCountries: [...state.allCountries, action.payload], //agregué esto 
                 countriesDetail: [...state.countriesDetail, action.payload],
                 allActivities: action.payload
             }
@@ -42,7 +43,7 @@ const rootReducer = (state = initialState, action) => {
                 allActivities: action.payload,
                 allCountries: [...state.allCountries, action.payload]
             }
-            case FILTER_CONTINENT:
+        case FILTER_CONTINENT:
                 const filteredCountries = state.allCountries.filter(
                     (country) => country.region === action.payload
                 );
@@ -50,8 +51,7 @@ const rootReducer = (state = initialState, action) => {
                     ...state,
                     searchResults: filteredCountries,
                 };
-        
-                case FILTER_ACTIVITY:
+        case FILTER_ACTIVITY:
                     const filteredByActivity = state.allCountries.filter((country) =>
                         country.Activities.some((activity) => activity.name === action.payload)
                     );
@@ -59,8 +59,7 @@ const rootReducer = (state = initialState, action) => {
                         ...state,
                         searchResults: filteredByActivity,
                     };
-        
-            case SORT_BY_NAME:
+        case SORT_BY_NAME:
                 const sortedByName = [...state.allCountries].sort((a, b) => {
                 if (action.payload === "asc") {
                     return a.name.localeCompare(b.name);
@@ -72,8 +71,7 @@ const rootReducer = (state = initialState, action) => {
                     ...state,
                     allCountries: sortedByName,
                 };
-            
-            case SORT_BY_POPULATION:
+        case SORT_BY_POPULATION:
                 const sortedByPopulation = [...state.allCountries].sort((a, b) => {
                 if (action.payload === "asc") {
                     return a.population - b.population;

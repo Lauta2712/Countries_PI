@@ -12,7 +12,7 @@
     font-family: 'Cinzel', serif;
     display: flex;
     justify-content: center;
-    width: fit-content;
+    max-width: fit-content;
     border-radius: 15px;
     font-weight: bold;
 }
@@ -22,7 +22,7 @@
     background-color: #32425B;
     padding: 10px 25px;
     color: white;
-    width: fit-content;
+    max-width: fit-content;
     margin-left: 1rem;
     border: 1px solid #32425B;
     border-radius: 10px;

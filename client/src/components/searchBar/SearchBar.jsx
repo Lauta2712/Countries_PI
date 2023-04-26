@@ -22,7 +22,7 @@ export default function SearchBar() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const filteredCountries = countries.filter(
-            (country) => country.name.toLowerCase() === searchString.toLowerCase()
+            (country) => country.name === searchString
             );
             if (filteredCountries.length > 0) {
                 dispatch(getByName(filteredCountries[0].name));

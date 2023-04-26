@@ -7,7 +7,8 @@ import { filterContinent,
         filterActivity, 
         sortByName, 
         sortByPopulation, 
-        getActivities } from "../../Redux/actions";
+        getActivities, 
+        getCountries} from "../../Redux/actions";
 
 import { Link } from "react-router-dom";
 
@@ -37,6 +38,7 @@ const Buttons = () => {
 
     useEffect(()=>{
         dispatch(getActivities())
+        dispatch(getCountries())
     }, [dispatch])
 
     return(
@@ -46,6 +48,7 @@ const Buttons = () => {
                     <button >Create Activities</button>
                 </Link>
             </div>
+            
             <div>
                 <select onChange={handleContinent}>
                     <option value="">Filter by Continent</option>

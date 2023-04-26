@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
 .button{
     font-family: 'Cinzel', serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 50%;
-    margin-right: 25%;
-    margin-left: 12%;
+    margin: 0 auto;
     background-color: #32425B;
     color: #94ABBD;
     cursor: pointer;
@@ -21,9 +22,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 70%;
-    margin-left: 40%;
-    margin-right: 15%;
+    max-width: 80%;
+    margin: 0 auto;
     font-size: 23px;
     color: #32425B;
-} 
+}

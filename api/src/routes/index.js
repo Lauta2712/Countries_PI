@@ -11,26 +11,29 @@ const routes = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-routes.get('/countries', async (req, res) => {
+routes.get('/countries', (req, res) => {
     const { name } = req.query;
-    try {
-        if (name) {
-            const queryName = await getCountryByName(name);
-            console.log(queryName);
-            res.status(200).send(queryName);
-        } else {
-            const allCountries = await getCountries();
-            res.status(200).send(allCountries);
-        }
-    } catch (error) {
-        res.status(500).json({error: error.message});
+    
+    let promise;
+    if (name) {
+        promise = getCountryByName(name);
+    } else {
+        promise = getCountries();
     }
-})
+    
+    promise.then((data) => {
+        res.status(200).send(data);
+    })
+    .catch((error) => {
+        res.status(500).json({ error: error.message });
+    });
+    });
+    
 
-routes.get('/countries/:idPais', async (req, res) => {
-    const {idPais} = req.params;
-    try {
-        const countryDetail = await getCountryById(idPais);
+    routes.get('/countries/:idPais', async (req, res) => {
+        const {idPais} = req.params;
+        try {
+            const countryDetail = await getCountryById(idPais);
         res.status(200).json(countryDetail)
     } catch (error) {
         console.log(error);
@@ -45,7 +48,7 @@ routes.post('/activities', async (req, res) => {
         res.status(200).json(activityCreated)
     } catch (error) {
         console.log(error.message);
-        res.status(500).json({error : error.message })
+        res.status(400).json({error : error.message })
     }
 } )
 
@@ -61,3 +64,18 @@ routes.get('/activities', async (req, res) => {
 })
 
 module.exports = routes;
+
+// routes.get('/countries', async (req, res) => {
+//     const { name } = req.query;
+//     try {
+//         if (name) {
+//             const queryName = await getCountryByName(name);
+//             res.status(200).send(queryName);
+//         } else {
+//             const allCountries = await getCountries();
+//             res.status(200).send(allCountries);
+//         }
+//     } catch (error) {
+//         res.status(500).json({error: error.message});
+//     }
+// })

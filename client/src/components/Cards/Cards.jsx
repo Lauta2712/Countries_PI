@@ -15,13 +15,13 @@ const Cards = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const paginatedCountries = countriesList.slice((currentPage - 1) * 10, currentPage * 10);
-
+    
     const pages = Math.ceil(countriesList.length / 10);
-
+    
     const handlePaginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
+    
     if (paginatedCountries.length === 0) {
         return (
             <div className={styles.notResult}>
@@ -34,7 +34,8 @@ const Cards = () => {
             </div>
         );
     }
-
+    
+    console.log(countries);
     return (
         <div className={styles.container}>
             

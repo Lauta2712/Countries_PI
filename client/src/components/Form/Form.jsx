@@ -67,8 +67,6 @@ const Form = () => {
             countries: [...form.countries].filter((element) => element !== id)
         })
     }
-
-    console.log(form);
     
     const validate = (form) => {
         let errors = {};
@@ -110,7 +108,7 @@ const Form = () => {
         return Object.keys(errors).length === 0;
     };
 
-    
+    console.log(errors);
     return (
     <div className={styles.formContainer}>
         
@@ -164,10 +162,17 @@ const Form = () => {
                     </div>
                 ))
             }
-
-            <div>
-            <button className={styles.button}>CREATE</button>
-            </div>
+            {
+                Object.keys(errors).length > 0 ?(
+                    <div className={styles.formTitle}>
+                        <span>The Form must be completed successfully</span>
+                    </div>
+                ):(
+                    <div>
+                        <button className={styles.button}>CREATE</button>
+                    </div>
+                )
+            }
             
             {isSuccess === true && <p className={styles.success}>Activity created successfully!</p>}
         </form>
@@ -177,4 +182,7 @@ const Form = () => {
 
 export default Form;
 
+{/* <div>
+<button className={styles.button}>CREATE</button>
+</div> */}
 {/* <input type="text" value={form.countries} onChange={handleChange} name="countries"/> */}
