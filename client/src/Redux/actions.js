@@ -14,7 +14,7 @@ export const GET_ACTIVITIES = "GET_ACTIVITIES";
 
 export const getCountries = () => {
     return async function(dispatch){
-        const response = await axios.get('http://localhost:3001/countries');
+        const response = await axios.get('https://countriesapi-dt1z.onrender.com/countries');
         return dispatch({
             type : GET_COUNTRIES,
             payload : response.data
@@ -24,7 +24,7 @@ export const getCountries = () => {
 
 export const getByName = (name) => {
     return async function(dispatch){
-        const response = await axios.get(`http://localhost:3001/countries?name=${name}`);
+        const response = await axios.get(`https://countriesapi-dt1z.onrender.com/countries?name=${name}`);
         return dispatch({
             type : GET_BY_NAME,
             payload : response.data
@@ -34,7 +34,7 @@ export const getByName = (name) => {
 
 export const getById = (id) => {
     return async function(dispatch){
-        const response = await axios.get(`http://localhost:3001/countries/${id}`);
+        const response = await axios.get(`https://countriesapi-dt1z.onrender.com/countries/${id}`);
         return dispatch({
             type : GET_BY_ID,
             payload : Array.isArray(response.data) ? response.data : [response.data]
@@ -45,7 +45,7 @@ export const getById = (id) => {
 
 export const createActivity = (activity) => {
     return async function(dispatch){
-        const response = await axios.post(`http://localhost:3001/activities`, activity);
+        const response = await axios.post(`https://countriesapi-dt1z.onrender.com/activities`, activity);
         return dispatch({
             type : CREATE_ACTIVITY,
             payload : response.data
@@ -55,7 +55,7 @@ export const createActivity = (activity) => {
 
 export const getActivities = () => {
     return async function (dispatch) {
-        const response = await axios.get(`http://localhost:3001/activities`);
+        const response = await axios.get(`https://countriesapi-dt1z.onrender.com/activities`);
         console.log(response);
         return dispatch({
             type : GET_ACTIVITIES,
