@@ -27,7 +27,7 @@ const Cards = () => {
             <div className={styles.notResult}>
                 <div className={styles.link}>
                     <Link to="/Home">
-                        <h4>No country found</h4>
+                        <h4>Loading, please wait</h4>
                         <button className={styles.button}>Back to Home</button>
                     </Link>
                 </div>
